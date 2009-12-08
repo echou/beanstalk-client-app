@@ -53,7 +53,7 @@ handle_info(reserve, #state{role=consumer}=State) ->
     {noreply, do_send(reserve, State)};
 
 handle_info({tcp, _Sock, Bin}, #state{proto=Proto}=State) ->
-    error_logger:info_msg("[~p] recv:~n\"~s\"~n", [self(), Bin]),
+    %error_logger:info_msg("[~p] recv:~n\"~s\"~n", [self(), Bin]),
     NewState = lists:foldl(fun process_packet/2, State, Proto:recv(Bin)),
     {noreply, NewState};
 
