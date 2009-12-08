@@ -8,7 +8,8 @@
         {applications, [kernel,stdlib]},
         {env, [
             {tubes, [
-                {'bbs-req', ["127.0.0.1:11300"], 1, 2}
+                % { TubeName, [Servers], ProducerCount, ConsumerCount }
+                {'test-tube', ["127.0.0.1:11300"], 1, 2}  
             ]}
         ]}
     ]
